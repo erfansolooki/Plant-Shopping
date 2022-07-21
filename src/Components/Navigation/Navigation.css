@@ -1,0 +1,71 @@
+.navigation {
+    background: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+}
+
+.navigation img {
+    height: 2.25rem;
+    width: 2.5rem;
+}
+
+.navigation .plantShopLogo {
+    text-align: center;
+}
+
+.navigation .plantShopLogo p {
+    font-family: Poppins;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+.navigation .plantShopLogo .plant {
+    /* position: absolute; */
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #545454;
+}
+
+
+
+.navigation .plantShopLogo .shopping {
+    /* position: absolute; */
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 15px;
+    color: rgba(178, 180, 181, 0.6);
+}
+
+.navigation button svg {
+    color: #545454;
+    font-size: 24px;
+}
+
+button.navbar-toggler.first-button {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.cartShopping .cartLogo {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+button.navbar-toggler {
+    border: none;
+}
+
+.cartShopping span {
+    background: rgba(2, 83, 39, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 10px;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+}
