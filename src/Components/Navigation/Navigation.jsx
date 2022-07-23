@@ -2,79 +2,42 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../data/Pictures/Group 336.png";
-import { RiShoppingCartLine, RiMenu2Line, RiCloseLine } from "react-icons/ri";
+import { RiShoppingCartLine, RiCloseLine, RiMenu3Fill } from "react-icons/ri";
 import "./Navigation.css";
 import React, { useState } from "react";
-import {
-  MDBContainer,
-  MDBCollapse,
-  MDBNavbar,
-  MDBNavbarToggler,
-  MDBBtn,
-} from "mdb-react-ui-kit";
+import { NavLink } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const [boxShadow, setBoxShadow] = useState(false);
 
   const hamburgerMenuHandler = () => {
     setOpen(!open);
-    console.log(open);
   };
-  // const [showAnimated, setShowAnimated] = useState(false);
+
+  const changeNavbarBoxShadow = () => {
+    if (window.scrollY >= 80) {
+      setBoxShadow(true);
+      console.log("navbar");
+    } else {
+      setBoxShadow(false);
+    }
+  };
+  console.log(boxShadow);
+
+  window.addEventListener("scroll", changeNavbarBoxShadow);
 
   return (
-    // <>
-    //   <section className="mb-3 navigation">
-    //     <MDBNavbar>
-    //       <MDBContainer fluid>
-    //         <MDBNavbarToggler
-    //           type="button"
-    //           className="first-button"
-    //           data-target="#navbarToggleExternalContent"
-    //           aria-controls="navbarToggleExternalContent"
-    //           aria-expanded="false"
-    //           aria-label="Toggle navigation"
-    //           onClick={() => setShowAnimated(!showAnimated)}
-    //         >
-    //           <div className={`animated-icon1 ${showAnimated && "open"}`}>
-    //             <span></span>
-    //             <span></span>
-    //             <span></span>
-    //           </div>
-    //         </MDBNavbarToggler>
-    //         <div className="plantShopLogo">
-    //           <img src={logo} alt="logo" />
-    //           <p className="plant">Plant</p>
-    //           <p className="shopping">Shopping</p>{" "}
-    //         </div>
-    //         <div className="cartShopping">
-    //           <RiShoppingCartLine className="cartLogo" />
-    //           <span>0</span>
-    //         </div>
-    //       </MDBContainer>
-    //     </MDBNavbar>
-
-    //     <MDBCollapse show={showAnimated}>
-    //       <div className="bg-light shadow-3 p-4">
-    //         <MDBBtn block className="border-bottom m-0" color="link">
-    //           Link 1
-    //         </MDBBtn>
-    //         <MDBBtn block className="border-bottom m-0" color="link">
-    //           Link 2
-    //         </MDBBtn>
-    //         <MDBBtn block className="border-bottom m-0" color="link">
-    //           Link 2
-    //         </MDBBtn>
-    //       </div>
-    //     </MDBCollapse>
-    //   </section>
-    // </>
-    <Navbar expand="md" className="navigation">
+    <Navbar
+      expand="md"
+      className={boxShadow ? "navigation scrollNavbar" : "navigation"}
+    >
       <Container>
-        <div className="cartShopping">
+        <NavLink to="/cart" className="cartShopping">
           <RiShoppingCartLine className="cartLogo" />
           <span>0</span>
-        </div>
+        </NavLink>
         <Navbar.Brand href="#home">
           <div className="plantShopLogo">
             <img src={logo} alt="logo" />
@@ -86,12 +49,36 @@ const Navigation = () => {
           aria-controls="basic-navbar-nav"
           onClick={hamburgerMenuHandler}
         >
-          {!open ? <RiMenu2Line /> : <RiCloseLine />}
+          {!open ? <RiMenu3Fill /> : <RiCloseLine />}
         </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+        <Navbar.Collapse id="basic-navbar-nav" dir="rtl">
+          <Nav className="me-auto align-items-md-center d-flex justify-content-between">
+            <section className="d-flex flex-column flex-md-row">
+              <LinkContainer to="/login">
+                <Nav.Link className="authentication-button mt-3 mt-md-0">
+                  <button className="loginButton">ورود</button>
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/signUp">
+                <Nav.Link className="authentication-button ">
+                  <button className="signUp">ثبت نام</button>
+                </Nav.Link>
+              </LinkContainer>
+            </section>
+            <section className="d-flex flex-column flex-md-row menuItem">
+              <LinkContainer to="/">
+                <Nav.Link>خانه</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/category">
+                <Nav.Link>گیاهان آپارتمانی</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/aboutUs">
+                <Nav.Link>درباره ما</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/contactUs">
+                <Nav.Link>ارتباط با ما</Nav.Link>
+              </LinkContainer>
+            </section>
           </Nav>
         </Navbar.Collapse>
       </Container>

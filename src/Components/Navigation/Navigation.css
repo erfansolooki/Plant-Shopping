@@ -1,5 +1,12 @@
 .navigation {
     background: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+    position: sticky;
+    top: 0;
+}
+
+.navigation.scrollNavbar {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    transition: all .3s ease-in-out;
 }
 
 .navigation img {
@@ -50,6 +57,10 @@ button.navbar-toggler.first-button {
     box-shadow: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .cartShopping .cartLogo {
     font-size: 1.5rem;
     color: #fff;
@@ -63,9 +74,95 @@ button.navbar-toggler {
     background: rgba(2, 83, 39, 0.5);
     color: #fff;
     border-radius: 50%;
-    padding: 4px 10px;
+    padding: 4px 11px;
     position: relative;
     bottom: 10px;
     right: 10px;
     box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
+}
+
+.authentication-button button {
+    width: 100%;
+    padding: 4px 1rem;
+    border-radius: 4px;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .authentication-button .loginButton {
+        border: solid 1px #eaeaea !important;
+    }
+
+}
+
+.authentication-button .loginButton {
+    background: none;
+    border: none;
+    color: #DCDCDC;
+    transition: all .3s ease-in-out;
+}
+
+.authentication-button .loginButton:hover {
+    color: #fff;
+}
+
+.authentication-button .signUp {
+    background: rgba(2, 83, 39, 0.5);
+    border: none;
+    color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all .3s ease-in-out;
+}
+
+.authentication-button .signUp:hover {
+    color: rgba(2, 83, 39, 0.5);
+    background: #fff;
+}
+
+.menuItem a {
+    color: #DCDCDC;
+    margin: 0 8px;
+}
+
+@media only screen and (max-width: 992px) {
+    .menuItem a {
+        margin: 0
+    }
+}
+
+.menuItem a:hover {
+    color: #FFFFFF;
+}
+
+.menuItem .active {
+    color: #FFFFFF !important;
+    border-bottom: solid 1px #fff;
+}
+
+a.dropdown-item {
+    color: #545454;
+}
+
+@media only screen and (min-width: 768px) {
+    .menuItem {
+        margin-right: 2rem !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .menuItem {
+        margin-right: 7.5rem !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .menuItem {
+        margin-right: 14rem !important;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .menuItem {
+        margin-right: 19rem !important;
+    }
 }
