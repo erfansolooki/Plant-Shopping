@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <main>
       <Header />
-      {children}
+      <section className="children">{children}</section>
     </main>
   );
 };

@@ -1,7 +1,21 @@
+:root {
+    --mainBlack: #545454;
+    --mainWhite: #ffffff;
+    --mainBackground: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+    --CTAButtonColor: rgba(2, 83, 39, 0.5);
+    --disableButtonColor: #DCDCDC;
+}
+
+a {
+    text-decoration: none;
+}
+
 .navigation {
-    background: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
-    position: sticky;
+    background: var(--mainBackground);
+    position: fixed;
+    width: 100%;
     top: 0;
+    z-index: 10;
 }
 
 .navigation.scrollNavbar {
@@ -25,17 +39,15 @@
 }
 
 .navigation .plantShopLogo .plant {
-    /* position: absolute; */
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
-    color: #545454;
+    color: (var(--mainBlack));
 }
 
 
 
 .navigation .plantShopLogo .shopping {
-    /* position: absolute; */
     font-weight: 300;
     font-size: 10px;
     line-height: 15px;
@@ -43,7 +55,7 @@
 }
 
 .navigation button svg {
-    color: #545454;
+    color: var(--mainBackground);
     font-size: 24px;
 }
 
@@ -57,13 +69,10 @@ button.navbar-toggler.first-button {
     box-shadow: none;
 }
 
-a {
-    text-decoration: none;
-}
 
 .cartShopping .cartLogo {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--mainWhite);
 }
 
 button.navbar-toggler {
@@ -71,8 +80,8 @@ button.navbar-toggler {
 }
 
 .cartShopping span {
-    background: rgba(2, 83, 39, 0.5);
-    color: #fff;
+    background: var(--CTAButtonColor);
+    color: var(--mainWhite);
     border-radius: 50%;
     padding: 4px 11px;
     position: relative;
@@ -98,29 +107,29 @@ button.navbar-toggler {
 .authentication-button .loginButton {
     background: none;
     border: none;
-    color: #DCDCDC;
+    color: var(--disableButtonColor);
     transition: all .3s ease-in-out;
 }
 
 .authentication-button .loginButton:hover {
-    color: #fff;
+    color: var(--mainWhite);
 }
 
 .authentication-button .signUp {
-    background: rgba(2, 83, 39, 0.5);
+    background: var(--CTAButtonColor);
     border: none;
-    color: #fff;
+    color: var(--mainWhite);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: all .3s ease-in-out;
 }
 
 .authentication-button .signUp:hover {
-    color: rgba(2, 83, 39, 0.5);
-    background: #fff;
+    color: var(--CTAButtonColor);
+    background: var(--mainWhite);
 }
 
 .menuItem a {
-    color: #DCDCDC;
+    color: var(--disableButtonColor);
     margin: 0 8px;
 }
 
@@ -131,16 +140,16 @@ button.navbar-toggler {
 }
 
 .menuItem a:hover {
-    color: #FFFFFF;
+    color: var(--mainWhite);
 }
 
 .menuItem .active {
-    color: #FFFFFF !important;
+    color: var(--mainWhite) !important;
     border-bottom: solid 1px #fff;
 }
 
 a.dropdown-item {
-    color: #545454;
+    color: var(--mainBlack);
 }
 
 @media only screen and (min-width: 768px) {

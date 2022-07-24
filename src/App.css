@@ -1,3 +1,11 @@
+:root {
+  --mainBlack: #545454;
+}
+
 .App {
   text-align: center;
+}
+
+.children {
+  margin-top: 5.97rem;
 }
