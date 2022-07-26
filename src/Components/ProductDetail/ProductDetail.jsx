@@ -1,31 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useParams } from "react-router-dom";
+import { products } from "../../data/data";
 
 const ProductDetail = () => {
-  const product = useParams();
-  console.log(product);
-  const [show, setShow] = useState(false);
+  const [flower, setFlower] = useState(null);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const product = useParams().id;
+  const productShow = () => {
+    const show = products.filter((item) => item.id == product);
+    setFlower(show);
+    console.log(show);
+  };
+  useEffect(() => {
+    productShow();
+  }, []);
 
-  return (
-    <>
-      <div onClick={handleShow}>Launch</div>
+  // console.log(flower);
 
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton dir="rtl">
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
-  );
+  return <></>;
 };
 
 export default ProductDetail;
