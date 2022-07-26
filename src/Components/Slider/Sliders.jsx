@@ -1,6 +1,9 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "react-bootstrap/Image";
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,8 +18,13 @@ import firstImage from "../../data/Pictures/Group 337.png";
 import secondImage from "../../data/Pictures/Group 341.jpg";
 import thirdImage from "../../data/Pictures/Group 350.png";
 import "./Slider.css";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Swiper
@@ -78,7 +86,10 @@ const Slider = () => {
                 جامعه و متخصصان را می طلبد .
               </p>
               <p className="price">369/000 هزارتومان</p>
-              <button className="CTAButton d-flex flex-row justify-content-center align-items-center">
+              <button
+                className="CTAButton d-flex flex-row justify-content-center align-items-center"
+                onClick={handleShow}
+              >
                 <p className="m-0">افزودن به سبد خرید</p>
               </button>
             </section>
@@ -103,13 +114,23 @@ const Slider = () => {
                 جامعه و متخصصان را می طلبد .
               </p>
               <p className="price">399/000 هزارتومان</p>
-              <button className="CTAButton d-flex flex-row justify-content-center align-items-center">
+              <button
+                className="CTAButton d-flex flex-row justify-content-center align-items-center"
+                onClick={handleShow}
+              >
                 <p className="m-0">افزودن به سبد خرید</p>
               </button>
             </section>
           </section>
         </SwiperSlide>
       </Swiper>
+
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton dir="rtl">
+          <Offcanvas.Title>{}</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body></Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 };

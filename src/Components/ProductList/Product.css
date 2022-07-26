@@ -1,0 +1,32 @@
+:root {
+    --mainBlack: #545454;
+    --mainWhite: #ffffff;
+    --mainBackground: linear-gradient(270deg, #308E63 79.76%, rgba(48, 142, 99, 0.55) 151.98%);
+    --CTAButtonColor: rgba(2, 83, 39, 0.5);
+    --disableButtonColor: #DCDCDC;
+}
+
+.productCart {
+    background: #308E63;
+    width: 320px;
+    height: 570px;
+    border-radius: 16px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.addToCart {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    height: 50px;
+    border: none;
+    background: var(--mainBlack);
+    color: var(--mainWhite);
+    border-radius: 0 16px;
+}
+
+.addLine {
+    font-size: 32px;
+    color: var(--mainWhite);
+}

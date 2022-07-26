@@ -1,10 +1,10 @@
-import ProductDetail from "../../Components/ProductDetail/ProductDetail";
-import Slider from "../../Components/Slider/Slider";
+import ProductList from "../../Components/ProductList/ProductList";
+import Sliders from "../../Components/Slider/Sliders";
 const HomePage = () => {
   return (
     <section>
-      <Slider />
-      <ProductDetail />
+      <Sliders />
+      <ProductList />
     </section>
   );
 };
