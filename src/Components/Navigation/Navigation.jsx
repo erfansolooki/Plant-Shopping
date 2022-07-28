@@ -24,7 +24,6 @@ const Navigation = () => {
       setBoxShadow(false);
     }
   };
-  console.log(boxShadow);
 
   window.addEventListener("scroll", changeNavbarBoxShadow);
 
