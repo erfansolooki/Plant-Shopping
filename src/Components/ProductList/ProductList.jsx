@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { RiHeartLine, RiAddLine } from "react-icons/ri";
 import { products } from "../../data/data";
-import "./Product.css";
+// import "./Product.css";
 import { Row, Col, Container } from "react-bootstrap";
 
 const ProductList = () => {
@@ -9,28 +9,32 @@ const ProductList = () => {
     <Container>
       <Row>
         {products.map((product) => (
-          <Col xl={3}>
-            <Link to={`/productsDetail/${product.id}`} key={product.id}>
-              <section className="productCart">
-                <section className="text-center">
-                  <img src={product.image} alt="" />
-                </section>
-                <section dir="rtl" className="d-flex justify-content-between">
-                  <section className="ps-2">
-                    <RiHeartLine />
-                    <p className="mt-2">{product.name}</p>
-                    <p className="mt-2">
-                      {" "}
-                      <span className="mt-2 mb-0">{product.price}</span>
-                      <span className="ms-2">هزارتومان</span>
-                    </p>
+          <Col xs={12} md={6} lg={4} xxl={3} className="g-4">
+            <div className="w-100 d-flex justify-content-center">
+              <Link to={`/productsDetail/${product.id}`} key={product.id}>
+                <section className="productCart">
+                  <section className="text-center">
+                    <img src={product.image} alt="" className="productImage" />
                   </section>
-                  <button className="addToCart">
-                    <RiAddLine className="addLine" />
-                  </button>
+                  <section dir="rtl" className="cartFooter position-absolute">
+                    <section className="ps-2 productDescription">
+                      <RiHeartLine />
+                      <p className="mt-2">{product.name}</p>
+                      <p className="mt-2">
+                        {" "}
+                        <span className="mt-2 mb-0 fw-bold">
+                          {product.price}
+                        </span>
+                        <span className="ms-1 fw-bold">تومان</span>
+                      </p>
+                    </section>
+                    <button className="addToCart position-absolute">
+                      <RiAddLine className="addLine" />
+                    </button>
+                  </section>
                 </section>
-              </section>
-            </Link>
+              </Link>
+            </div>
           </Col>
         ))}
       </Row>

@@ -9,7 +9,7 @@
 .productCart {
     background: #F6F6F6;
     width: 300px;
-    height: 510px;
+    height: 450px;
     border-radius: 16px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -29,4 +29,23 @@
 .addLine {
     font-size: 32px;
     color: var(--mainWhite);
+}
+
+.productCart .productImage {
+    height: 338px;
+    width: 180px;
+}
+
+.productDescription {
+    color: var(--mainBlack);
+}
+
+.cartFooter {
+    width: 300px;
+}
+
+.pagination-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

@@ -7,7 +7,7 @@ export const products = [
     price: 399000,
     offPrice: 399000,
     discount: 0,
-    image: "./Pictures/Group 124.jpg",
+    image: "https://s6.uupload.ir/files/group_121_aa3.jpg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const products = [
     price: 1249000,
     offPrice: 1249000,
     discount: 0,
-    image: "./Pictures/Group 123.jpg",
+    image: "https://s6.uupload.ir/files/group_120_3n9z.jpg",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const products = [
     price: 699000,
     offPrice: 699000,
     discount: 0,
-    image: "./Pictures/Group 121.jpg",
+    image: "https://s6.uupload.ir/files/group_119_i86a.jpg",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const products = [
     price: 1349000,
     offPrice: 1349000,
     discount: 0,
-    image: "./Pictures/Group 120.jpg",
+    image: "https://s6.uupload.ir/files/group_118_5bw.jpg",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const products = [
     price: 499000,
     offPrice: 499000,
     discount: 0,
-    image: "./Pictures/Group 117.jpg",
+    image: "https://s6.uupload.ir/files/group_117_2uzo.jpg",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const products = [
     price: 299000,
     offPrice: 299000,
     discount: 0,
-    image: "./Pictures/Group 116.jpg",
+    image: "https://s6.uupload.ir/files/group_116_agwn.jpg",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const products = [
     price: 249000,
     offPrice: 249000,
     discount: 0,
-    image: "./Pictures/Group 118.jpg",
+    image: "https://s6.uupload.ir/files/group_340_yln8.png",
   },
   {
     id: 8,
@@ -87,7 +87,7 @@ export const products = [
     price: 449000,
     offPrice: 449000,
     discount: 0,
-    image: "./Pictures/Group 320.jpg",
+    image: "https://s6.uupload.ir/files/group_320_51s6.jpg",
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ export const products = [
     price: 529000,
     offPrice: 529000,
     discount: 0,
-    image: "./Pictures/Group 321.jpg",
+    image: "https://s6.uupload.ir/files/group_321_9rrw.jpg",
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ export const products = [
     price: 369000,
     offPrice: 369000,
     discount: 0,
-    image: "./Pictures/Group 322.jpg",
+    image: "https://s6.uupload.ir/files/group_322_n0oa.jpg",
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ export const products = [
     price: 989000,
     offPrice: 989000,
     discount: 0,
-    image: "./Pictures/Group 323.jpg",
+    image: "https://s6.uupload.ir/files/group_323_1m2.jpg",
   },
   {
     id: 13,
