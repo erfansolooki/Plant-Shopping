@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
 import { RiHeart2Fill, RiAddLine } from "react-icons/ri";
-import { products } from "../../data/data";
 import "./Product.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { useState, useMemo } from "react";
 import Pagination from "../pagination/Pagination";
+import { useCartDispatcher } from "../../Context/CartProvider";
+import { useProducts } from "../../Context/ProductsProvider";
 
 let PageSize = 8;
 
 const ProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
-  console.log(activeLikeButton);
   const [currentPage, setCurrentPage] = useState(1);
+  const products = useProducts();
+  const cartDispatch = useCartDispatcher();
 
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
@@ -19,9 +21,14 @@ const ProductList = () => {
     return products.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
+  const addProductHandler = (product) => {
+    cartDispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
   return (
     <>
       <Container>
+        <p className="title">گیاهان آپارتمانی</p>
         <Row>
           {currentTableData.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
@@ -54,7 +61,10 @@ const ProductList = () => {
                         <span className="ms-1 fw-bold">تومان</span>
                       </p>
                     </section>
-                    <button className="addToCart position-absolute">
+                    <button
+                      className="addToCart position-absolute"
+                      onClick={() => addProductHandler(product)}
+                    >
                       <RiAddLine className="addLine" />
                     </button>
                   </section>

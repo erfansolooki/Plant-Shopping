@@ -9,20 +9,26 @@ import Category from "./Pages/Category/Category";
 import LoginPage from "./Pages/Login/LoginPage";
 import SignUpPage from "./Pages/SignUp/SignUpPage";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import CartProvider from "./Context/CartProvider";
+import ProductsProvider from "./Context/ProductsProvider";
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signUp" element={<SignUpPage />} />
-          <Route path="/productsDetail/:id" element={<ProductDetail />} />
-        </Routes>
-      </Layout>
+      <ProductsProvider>
+        <CartProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/category" element={<Category />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/signUp" element={<SignUpPage />} />
+              <Route path="/productsDetail/:id" element={<ProductDetail />} />
+            </Routes>
+          </Layout>
+        </CartProvider>
+      </ProductsProvider>
     </BrowserRouter>
   );
 }

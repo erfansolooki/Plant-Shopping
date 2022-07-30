@@ -19,7 +19,6 @@ const Navigation = () => {
   const changeNavbarBoxShadow = () => {
     if (window.scrollY >= 80) {
       setBoxShadow(true);
-      console.log("navbar");
     } else {
       setBoxShadow(false);
     }
