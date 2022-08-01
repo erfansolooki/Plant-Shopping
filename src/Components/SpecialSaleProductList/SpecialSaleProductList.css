@@ -9,10 +9,6 @@
     width: 400px;
 }
 
-.productCart:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 .discountPercent {
     width: 44px;
     height: 58px;

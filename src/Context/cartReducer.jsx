@@ -6,13 +6,12 @@ const cartProvider = (state, action) => {
         (item) => item.id === action.payload.id
       );
 
-      if (findIndex < 0) {
-        cloneProducts.push({ ...action.payload, quantity: 1 });
-      } else {
-        const selectedProduct = { ...cloneProducts[findIndex] };
-        selectedProduct.quantity++;
-        cloneProducts[findIndex] = selectedProduct;
-      }
+      if (findIndex < 0) cloneProducts.push({ ...action.payload, quantity: 1 });
+      // } else {
+      //   const selectedProduct = { ...cloneProducts[findIndex] };
+      //   selectedProduct.quantity++;
+      //   cloneProducts[findIndex] = selectedProduct;
+      // }
       return {
         ...state,
         cart: cloneProducts,
@@ -20,7 +19,7 @@ const cartProvider = (state, action) => {
     }
 
     default:
-      break;
+      return state;
   }
 };
 

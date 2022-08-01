@@ -113,6 +113,7 @@ button.navbar-toggler {
 
 .authentication-button .loginButton:hover {
     color: var(--mainWhite);
+    background-color: rgba(2, 83, 39, 0.5);
 }
 
 .authentication-button .signUp {

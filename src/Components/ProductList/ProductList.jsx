@@ -7,7 +7,7 @@ import Pagination from "../pagination/Pagination";
 import { useCartDispatcher } from "../../Context/CartProvider";
 import { useProducts } from "../../Context/ProductsProvider";
 
-let PageSize = 8;
+let PageSize = 12;
 
 const ProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
@@ -29,7 +29,7 @@ const ProductList = () => {
     <>
       <Container>
         <p className="title">گیاهان آپارتمانی</p>
-        <Row>
+        <Row className="justify-content-center">
           {currentTableData.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
               <div className="w-100 d-flex justify-content-center">
