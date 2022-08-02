@@ -7,10 +7,12 @@ import "./Navigation.css";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
+import { useCart } from "../../Context/CartProvider";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [boxShadow, setBoxShadow] = useState(false);
+  const { cart } = useCart();
 
   const hamburgerMenuHandler = () => {
     setOpen(!open);
@@ -34,7 +36,7 @@ const Navigation = () => {
       <Container>
         <NavLink to="/cart" className="cartShopping">
           <RiShoppingCartLine className="cartLogo" />
-          <span>0</span>
+          <span>{cart.length}</span>
         </NavLink>
         <Navbar.Brand href="#home">
           <div className="plantShopLogo">

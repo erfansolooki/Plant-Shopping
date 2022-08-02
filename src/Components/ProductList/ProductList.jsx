@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { RiHeart2Fill, RiAddLine } from "react-icons/ri";
+import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
 import "./Product.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { useState, useMemo } from "react";
 import Pagination from "../pagination/Pagination";
-import { useCartDispatcher } from "../../Context/CartProvider";
+import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { useProducts } from "../../Context/ProductsProvider";
+import { checkInCart } from "../../Utils/checkInCart";
 
 let PageSize = 12;
 
@@ -13,6 +14,8 @@ const ProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const products = useProducts();
+  const { cart } = useCart();
+  console.log(cart);
   const cartDispatch = useCartDispatcher();
 
   const currentTableData = useMemo(() => {
@@ -65,7 +68,16 @@ const ProductList = () => {
                       className="addToCart position-absolute"
                       onClick={() => addProductHandler(product)}
                     >
-                      <RiAddLine className="addLine" />
+                      {checkInCart(cart, product) ? (
+                        <div className="checkInCart">
+                          <Link to="/cart">
+                            <span className="me-1">ادامه خرید</span>
+                            <RiArrowLeftLine />
+                          </Link>
+                        </div>
+                      ) : (
+                        <RiAddLine className="addLine" />
+                      )}
                     </button>
                   </section>
                 </section>

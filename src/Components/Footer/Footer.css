@@ -86,3 +86,7 @@
 .twitterIcon:hover {
     background: rgb(29, 161, 242);
 }
+
+.footerDescription {
+    color: #545454;
+}

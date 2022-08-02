@@ -8,6 +8,7 @@ export const products = [
     offPrice: 989000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_323_1m2.jpg",
+    sliderImage: "https://s6.uupload.ir/files/group_337_1wpy.png",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const products = [
     offPrice: 369000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_322_n0oa.jpg",
+    sliderImage: "https://s6.uupload.ir/files/group_341_arod.jpg",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const products = [
     offPrice: 399000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_126_n95u.jpg",
+    sliderImage: "https://s6.uupload.ir/files/group_350_nb9x.png",
   },
   {
     id: 4,

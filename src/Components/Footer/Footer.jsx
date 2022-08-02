@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <section className="d-flex justify-content-center">
+        <section className="footerDescription d-flex justify-content-center">
           <p className="w-75">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

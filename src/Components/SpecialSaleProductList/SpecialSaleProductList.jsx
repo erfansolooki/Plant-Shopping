@@ -3,12 +3,14 @@ import "./SpecialSaleProductList.css";
 import { specialSale } from "../../data/data";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
-import { RiHeart2Fill, RiAddLine } from "react-icons/ri";
+import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
 import { useState } from "react";
-import { useCartDispatcher } from "../../Context/CartProvider";
+import { useCart, useCartDispatcher } from "../../Context/CartProvider";
+import { checkInCart } from "../../Utils/checkInCart";
 
 const SpecialSaleProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
+  const { cart } = useCart();
   const cartDispatch = useCartDispatcher();
 
   const addProductHandler = (product) => {
@@ -65,7 +67,17 @@ const SpecialSaleProductList = () => {
                       className="addToCart position-absolute"
                       onClick={() => addProductHandler(product)}
                     >
-                      <RiAddLine className="addLine" />
+                      {checkInCart(cart, product) ? (
+                        <div className="checkInCart">
+                          <Link to="/cart">
+                            {" "}
+                            <span className="me-1">ادامه خرید</span>
+                            <RiArrowLeftLine />
+                          </Link>
+                        </div>
+                      ) : (
+                        <RiAddLine className="addLine" />
+                      )}
                     </button>
                   </section>
                 </section>
