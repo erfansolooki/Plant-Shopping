@@ -15,7 +15,6 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const products = useProducts();
   const { cart } = useCart();
-  console.log(cart);
   const cartDispatch = useCartDispatcher();
 
   const currentTableData = useMemo(() => {
@@ -39,11 +38,20 @@ const ProductList = () => {
                 <section className="productCart">
                   <section className="text-center">
                     <Link to={`/productsDetail/${product.id}`}>
-                      <img
-                        src={product.image}
-                        alt=""
-                        className="productImage"
-                      />
+                      <div class="popover__wrapper">
+                        <div class="popover__content">
+                          <p class="popover__message mb-0 p-1">
+                            برای جزییات بیشتر کلیک کنید
+                          </p>
+                        </div>
+                        <div class="popover__title">
+                          <img
+                            src={product.image}
+                            alt=""
+                            className="productImage"
+                          />
+                        </div>
+                      </div>
                     </Link>
                   </section>
                   <section dir="rtl" className="cartFooter position-absolute">

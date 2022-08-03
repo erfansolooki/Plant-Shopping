@@ -23,3 +23,12 @@
 .mainPrice del {
     color: #fff;
 }
+
+.specialSaleProductList .popover__content {
+    background-color: #545454;
+}
+
+
+.specialSaleProductList .popover__content:before {
+    border-color: transparent transparent #545454;
+}
