@@ -17,11 +17,6 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 
 const Slider = () => {
   const products = useProducts();
-  const cartDispatch = useCartDispatcher();
-
-  const addProductHandler = (product) => {
-    cartDispatch({ type: "ADD_TO_CART", payload: product });
-  };
 
   return (
     <Swiper
@@ -63,10 +58,7 @@ const Slider = () => {
                 <span className="ms-2">هزارتومان</span>
               </p>
               <Link to={`/productsDetail/${product.id}`}>
-                <button
-                  className="CTAButton d-flex flex-row justify-content-center align-items-center"
-                  onClick={() => addProductHandler(product)}
-                >
+                <button className="CTAButton d-flex flex-row justify-content-center align-items-center">
                   <p className="m-0">خرید</p>
                   <span className="ms-2">
                     <RiArrowLeftLine />

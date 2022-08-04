@@ -11,7 +11,7 @@ a {
 }
 
 .navigation {
-    background: var(--mainBackground);
+    background: #308E63;
     position: fixed;
     width: 100%;
     top: 0;

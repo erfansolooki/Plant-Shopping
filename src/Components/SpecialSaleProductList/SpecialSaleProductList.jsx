@@ -33,7 +33,7 @@ const SpecialSaleProductList = () => {
                     </div>
                   </section>
                   <section className="text-center">
-                    <Link to={`/productsDetail/${product.id}`}>
+                    <Link to={`/specialSaleProductsDetail/${product.id}`}>
                       <div class="popover__wrapper">
                         <div class="popover__content">
                           <p class="popover__message mb-0 p-1">

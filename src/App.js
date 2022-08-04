@@ -11,6 +11,7 @@ import SignUpPage from "./Pages/SignUp/SignUpPage";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import CartProvider from "./Context/CartProvider";
 import ProductsProvider from "./Context/ProductsProvider";
+import SpecialSaleProductDetail from "./Components/ProductDetail/SpecialSaleProductDetail";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signUp" element={<SignUpPage />} />
               <Route path="/productsDetail/:id" element={<ProductDetail />} />
+              <Route
+                path="/specialSaleProductsDetail/:id"
+                element={<SpecialSaleProductDetail />}
+              />
             </Routes>
           </Layout>
         </CartProvider>
