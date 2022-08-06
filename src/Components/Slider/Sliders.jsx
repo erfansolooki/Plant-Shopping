@@ -35,7 +35,7 @@ const Slider = () => {
       className="mySwiper"
     >
       {products.slice(0, 3).map((product) => (
-        <SwiperSlide>
+        <SwiperSlide key={product.id}>
           <section className="d-lg-flex d-block">
             <section className="sliderImage">
               <Image src={product.sliderImage} alt="" fluid className="w-75" />
