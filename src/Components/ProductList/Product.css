@@ -22,13 +22,17 @@
 .addToCart {
     bottom: 0;
     left: 0;
-    width: 90px;
+    width: 106px;
     height: 50px;
     border: none;
     background: var(--mainBlack);
-    color: var(--mainWhite);
     border-radius: 0 16px;
     transition: all .3s ease-in-out;
+}
+
+.addToCart a {
+    color: var(--mainWhite);
+    font-size: 14px;
 }
 
 .addToCart:hover {

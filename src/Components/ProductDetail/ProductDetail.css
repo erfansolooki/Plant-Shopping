@@ -23,7 +23,7 @@
     width: 150px;
     height: 30px;
     font-size: 12px;
-    background: #308E63;
+    background: #308E63 !important;
     box-shadow: 0px 5px 5px rgb(0 0 0 / 10%);
     transition: all .3s ease-in-out;
 }
@@ -62,7 +62,8 @@
 }
 
 .productDetail.specialSale button {
-    background: #545454;
+    background: #545454 !important;
+    color: #FFF;
 }
 
 .productDetail.specialSale .mainDescription p {

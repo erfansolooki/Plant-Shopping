@@ -15,7 +15,6 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const products = useProducts();
   const { cart } = useCart();
-  const [click, setClick] = useState(false);
   const cartDispatch = useCartDispatcher();
 
   const currentTableData = useMemo(() => {
@@ -26,7 +25,6 @@ const ProductList = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
-    setClick(true);
   };
 
   return (
@@ -76,7 +74,11 @@ const ProductList = () => {
                     </section>
                     <button
                       className="addToCart position-absolute"
-                      onClick={!click ? () => addProductHandler(product) : null}
+                      onClick={
+                        checkInCart(cart, product)
+                          ? ""
+                          : () => addProductHandler(product)
+                      }
                     >
                       {checkInCart(cart, product) ? (
                         <div className="checkInCart">

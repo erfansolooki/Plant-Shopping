@@ -11,12 +11,10 @@ import { checkInCart } from "../../Utils/checkInCart";
 const SpecialSaleProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
   const { cart } = useCart();
-  const [click, setClick] = useState(false);
   const cartDispatch = useCartDispatcher();
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
-    setClick(true);
   };
 
   return (
@@ -74,9 +72,14 @@ const SpecialSaleProductList = () => {
                         <span className="ms-2">تومان</span>
                       </p>
                     </section>
+
                     <button
                       className="addToCart position-absolute"
-                      onClick={!click ? () => addProductHandler(product) : null}
+                      onClick={
+                        checkInCart(cart, product)
+                          ? ""
+                          : () => addProductHandler(product)
+                      }
                     >
                       {checkInCart(cart, product) ? (
                         <div className="checkInCart">

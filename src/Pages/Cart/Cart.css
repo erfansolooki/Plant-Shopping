@@ -14,7 +14,7 @@
     font-weight: 700;
 }
 
-.productDetail p:nth-child(2) {
+.cart .productDetail p:nth-child(2) {
     color: rgba(178, 180, 181, 0.6);
 }
 

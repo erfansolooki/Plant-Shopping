@@ -47,11 +47,7 @@ const SpecialSaleProductDetail = () => {
                       فروش ویژه
                     </p>
                   </Col>
-                  <Col md={3}>
-                    {/* <p className="mb-2 me-2 p-2 py-md-1 text-center mb-0">
-                      تخفیف محصول : %{item.discount}
-                    </p> */}
-                  </Col>
+                  <Col md={3}></Col>
                 </section>
                 <section dir="rtl" className="d-md-flex align-items-center">
                   <div>
@@ -81,7 +77,11 @@ const SpecialSaleProductDetail = () => {
                     </p>
                     <button
                       className="addToCart"
-                      onClick={() => addProductHandler(item)}
+                      onClick={
+                        checkInCart(cart, item)
+                          ? ""
+                          : () => addProductHandler(item)
+                      }
                     >
                       {checkInCart(cart, item) ? (
                         <div className="checkInCart">

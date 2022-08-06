@@ -58,7 +58,11 @@ const ProductDetail = () => {
                   </p>
                   <button
                     className="addToCart"
-                    onClick={() => addProductHandler(item)}
+                    onClick={
+                      checkInCart(cart, item)
+                        ? ""
+                        : () => addProductHandler(item)
+                    }
                   >
                     {checkInCart(cart, item) ? (
                       <div className="checkInCart">
