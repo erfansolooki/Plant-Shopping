@@ -65,18 +65,12 @@ const Navigation = () => {
                 </Nav.Link>
               </LinkContainer>
             </section>
-            <section className="d-flex flex-column flex-md-row menuItem">
+            <section className="d-flex flex-column flex-md-row menuItem ms-md-5">
               <LinkContainer to="/">
                 <Nav.Link>خانه</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/category">
-                <Nav.Link>گیاهان آپارتمانی</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/aboutUs">
-                <Nav.Link>درباره ما</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/contactUs">
-                <Nav.Link>ارتباط با ما</Nav.Link>
+                <Nav.Link>محصولات</Nav.Link>
               </LinkContainer>
             </section>
           </Nav>

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectComponent from "../../Common/SelectComponent";
 import { useProductsDispatcher } from "../../Context/ProductsProvider";
+import "./Filter.css";
 
 const sortOptions = [
-  { value: "highest", label: "hight to low price" },
-  { value: "lowest", label: "low to hight price" },
+  { value: "highest_price", label: "بیشترین قیمت" },
+  { value: "lowest_price", label: "کم ترین قیمت" },
 ];
 
 const Filter = () => {

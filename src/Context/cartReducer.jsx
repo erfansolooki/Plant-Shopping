@@ -20,7 +20,7 @@ const cartProvider = (state, action) => {
         total: state.total + action.payload.offPrice,
       };
     }
-    case "DECREMENT": {
+    case "INCREMENT": {
       const cloneProducts = [...state.cart];
       const findIndex = cloneProducts.findIndex(
         (item) => item.id === action.payload.id
@@ -32,6 +32,43 @@ const cartProvider = (state, action) => {
         ...state,
         cart: cloneProducts,
         total: state.total + action.payload.offPrice,
+      };
+    }
+    case "DECREMENT": {
+      const cloneProducts = [...state.cart];
+      const findIndex = cloneProducts.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      const selectedProduct = { ...cloneProducts[findIndex] };
+
+      if (selectedProduct.quantity === 1) {
+        const filterProducts = cloneProducts.filter(
+          (product) => product.id !== action.payload.id
+        );
+        return {
+          ...state,
+          cart: filterProducts,
+          total: state.total - action.payload.offPrice,
+        };
+      } else {
+        selectedProduct.quantity--;
+        cloneProducts[findIndex] = selectedProduct;
+      }
+      return {
+        ...state,
+        cart: cloneProducts,
+        total: state.total - action.payload.offPrice,
+      };
+    }
+    case "REMOVE_PRODUCT": {
+      const cloneProducts = [...state.cart];
+      const filterProducts = cloneProducts.filter(
+        (product) => product.id !== action.payload.id
+      );
+      return {
+        ...state,
+        cart: filterProducts,
+        total: state.total - action.payload.offPrice,
       };
     }
 

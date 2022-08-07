@@ -152,27 +152,3 @@ button.navbar-toggler {
 a.dropdown-item {
     color: var(--mainBlack);
 }
-
-@media only screen and (min-width: 768px) {
-    .menuItem {
-        margin-right: 2rem !important;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .menuItem {
-        margin-right: 7.5rem !important;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    .menuItem {
-        margin-right: 14rem !important;
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    .menuItem {
-        margin-right: 19rem !important;
-    }
-}

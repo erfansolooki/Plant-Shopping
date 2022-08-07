@@ -1,11 +1,12 @@
-.cart {
+.cart,
+.totalDiscount {
     border-bottom: 1px solid rgba(84, 84, 84, .2);
 }
 
 .cart img {
     width: 80px;
     height: 160px;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 .cart .productDetail {
@@ -32,18 +33,41 @@
     transition: all .3s ease-in-out;
 }
 
-.subtractIcon {
+.subtractIcon,
+.addIcon {
     border: 1px solid rgba(220, 220, 220, 1);
     color: #545454;
 }
 
-.addIcon {
+.subtractIcon:hover,
+.addIcon:hover {
     background: rgba(84, 84, 84, 1);
     color: #fff;
+    border: none;
 }
 
 .addIcon:hover,
 .subtractIcon:hover,
 .closeIcon:hover {
     transform: scale(1.1);
+}
+
+.cartSummary {
+    color: #545454;
+}
+
+.summaryItem span,
+.totalDiscount span,
+.netPrice span {
+    font-size: 12px;
+}
+
+.cart .offPrice {
+    color: #545454 !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .cart .productDetail {
+        font-size: 16px;
+    }
 }

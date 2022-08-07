@@ -70,7 +70,7 @@ const SpecialSaleProductDetail = () => {
                           {item.discount}%
                         </span>
                       </p>
-                      <p className="mb-2">
+                      <p className="mb-2 offPrice">
                         <span className="mb-0 fw-bold">{item.offPrice}</span>
                         <span className="ms-2">تومان</span>
                       </p>

@@ -5,7 +5,7 @@ const productsReducer = (state, action) => {
     case "SORT": {
       const value = action.sortOptions.value;
       const cloneProducts = [...state];
-      if (value === "lowest") {
+      if (value === "lowest_price") {
         // use loadash library
         return _.orderBy(cloneProducts, ["price"], ["asc"]);
       } else {

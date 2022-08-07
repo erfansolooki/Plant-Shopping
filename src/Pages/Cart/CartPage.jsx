@@ -3,6 +3,7 @@ import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { RiAddLine, RiCloseLine, RiSubtractLine } from "react-icons/ri";
 import { Col } from "react-bootstrap";
 import "./Cart.css";
+import EmptyCart from "../../Components/EmptyCart/EmptyCart";
 
 const CartPage = () => {
   const { cart, total } = useCart();
@@ -11,15 +12,18 @@ const CartPage = () => {
   const cartDispatch = useCartDispatcher();
 
   const incrementHandler = (product) => {
+    cartDispatch({ type: "INCREMENT", payload: product });
+  };
+
+  const decrementHandler = (product) => {
     cartDispatch({ type: "DECREMENT", payload: product });
   };
 
-  if (!cart.length)
-    return (
-      <Container>
-        <p>محصولی در سبد خرید شما وجود ندارد</p>
-      </Container>
-    );
+  const removeHandler = (product) => {
+    cartDispatch({ type: "REMOVE_PRODUCT", payload: product });
+  };
+
+  if (!cart.length) return <EmptyCart />;
 
   return (
     <Container>
@@ -28,30 +32,50 @@ const CartPage = () => {
         <Col xs={12} lg={8}>
           {cart.map((product) => (
             <section
-              className=" cart py-2 my-2 d-flex justify-content-between"
+              className="cart py-2 my-2 d-flex justify-content-between"
               key={product.id}
               dir="rtl"
             >
               <div className="d-flex">
                 <img src={product.image} alt="" className="py-2" />
                 <section className="d-flex align-items-center">
-                  <section className="productDetail ms-2">
+                  <section className="productDetail ms-2 ms-md-3">
                     <p className="mb-2">{product.name}</p>
                     <p className="mb-2">
                       سایز
                       <span className="ms-1">{product.size}</span>
                     </p>
-                    <p className="mb-2">
-                      {product.price}
-                      <span className="ms-1">تومان</span>
+                    <p className="mt-2 price">
+                      {product.price !== product.offPrice ? (
+                        <p className="mt-2 mb-0 mainPrice">
+                          <del>
+                            <span className="m-0 fw-bold">{product.price}</span>
+                          </del>
+                          <span dir="rtl" className="ms-2 discount">
+                            {product.discount}%
+                          </span>
+                        </p>
+                      ) : (
+                        ""
+                      )}
+                      <p className="mb-2 offPrice">
+                        <span className="mb-0 fw-bold">{product.offPrice}</span>
+                        <span className="ms-2">تومان</span>
+                      </p>
                     </p>
                   </section>
                 </section>
               </div>
               <section className="d-flex flex-column justify-content-evenly align-items-end">
-                <RiCloseLine className="closeIcon" />
+                <RiCloseLine
+                  className="closeIcon"
+                  onClick={() => removeHandler(product)}
+                />
                 <section className="d-flex align-items-center">
-                  <RiSubtractLine className="subtractIcon me-2" />
+                  <RiSubtractLine
+                    className="subtractIcon me-2"
+                    onClick={() => decrementHandler(product)}
+                  />
                   {product.quantity}
                   <RiAddLine
                     className="addIcon ms-2"
@@ -85,28 +109,28 @@ const CartSummary = ({ total, cart }) => {
 
   return (
     <section className="cartSummary">
-      <h3>Cart Summary :</h3>
-      <div className="summaryItem">
-        <p>Original Total Price : </p>
-        <p>{originalTotalPrice} $</p>
+      <div className="summaryItem d-flex justify-content-between fw-bold">
+        <p>مجموع :</p>
+        <p>
+          {originalTotalPrice}
+          <span className="ms-1">تومان</span>
+        </p>
       </div>
-      <div
-        className="summaryItem"
-        style={{ borderBottom: "1px solid #ccc", paddingBottom: "8px" }}
-      >
-        <p>Total Discount : </p>
-        <p>{originalTotalPrice - total}</p>
+      <div className="totalDiscount d-flex justify-content-between fw-bold">
+        <p>مجموع تخفیف :</p>
+        <p>
+          {originalTotalPrice - total}
+          <span className="ms-1">تومان</span>
+        </p>
       </div>
-      <div className="summaryItem">
-        <p>Net Price : </p>
-        <p>{total} $</p>
+      <div className="netPrice d-flex justify-content-between fw-bold mt-2">
+        <p>قابل پرداخت : </p>
+        <p>
+          {total}
+          <span className="ms-1">تومان</span>
+        </p>
       </div>
-      <button
-        className="btn primary"
-        style={{ marginTop: "16px", width: "100%" }}
-      >
-        Go to checkout
-      </button>
+      <button className="btn primary">ادامه فرآیند خرید</button>
     </section>
   );
 };

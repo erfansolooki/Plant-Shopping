@@ -27,12 +27,6 @@ const Footer = () => {
             <li>
               <Link to="/category">گیاهان آپارتمانی</Link>
             </li>
-            <li>
-              <Link to="/aboutUs">درباره ما</Link>
-            </li>
-            <li>
-              <Link to="/contactUs">ارتباط با ما</Link>
-            </li>
           </ul>
 
           <div className="d-flex justify-content-center mb-4" dir="rtl">
