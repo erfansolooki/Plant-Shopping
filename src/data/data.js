@@ -9,6 +9,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_323_1m2.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_337_1wpy.png",
+    suitableFor: ["room", "office"],
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_322_n0oa.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_341_arod.jpg",
+    suitableFor: ["room", "office", "balcony"],
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_126_n95u.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_350_nb9x.png",
+    suitableFor: ["room", "office"],
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const products = [
     offPrice: 1349000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_118_5bw.jpg",
+    suitableFor: ["room", "office", "bathroom", "balcony"],
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ export const products = [
     offPrice: 499000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_117_2uzo.jpg",
+    suitableFor: ["bathroom", "balcony"],
   },
   {
     id: 6,
@@ -61,6 +66,7 @@ export const products = [
     offPrice: 299000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_116_agwn.jpg",
+    suitableFor: ["bathroom"],
   },
   {
     id: 7,
@@ -71,6 +77,7 @@ export const products = [
     offPrice: 249000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_340_yln8.png",
+    suitableFor: ["room", "office", "bathroom"],
   },
   {
     id: 8,
@@ -81,6 +88,7 @@ export const products = [
     offPrice: 449000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_320_xp23.jpg",
+    suitableFor: ["bathroom"],
   },
   {
     id: 9,
@@ -91,6 +99,7 @@ export const products = [
     offPrice: 1880000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_370_r5ni.png",
+    suitableFor: ["room", "office"],
   },
   {
     id: 10,
@@ -101,6 +110,7 @@ export const products = [
     offPrice: 529000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_321_9rrw.jpg",
+    suitableFor: ["balcony"],
   },
   {
     id: 11,
@@ -111,6 +121,7 @@ export const products = [
     offPrice: 1249000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_120_3n9z.jpg",
+    suitableFor: ["office", "bathroom"],
   },
   {
     id: 12,
@@ -121,6 +132,7 @@ export const products = [
     offPrice: 399000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_121_aa3.jpg",
+    suitableFor: ["room", "office", "bathroom", "balcony"],
   },
   {
     id: 13,
@@ -131,6 +143,7 @@ export const products = [
     offPrice: 1199000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_324_gyoa.jpg",
+    suitableFor: ["room", "office"],
   },
   {
     id: 14,
@@ -141,6 +154,7 @@ export const products = [
     offPrice: 699000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_119_i86a.jpg",
+    suitableFor: ["room", "office"],
   },
   {
     id: 15,
@@ -151,6 +165,7 @@ export const products = [
     offPrice: 890000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_372_nksv.png",
+    suitableFor: ["balcony"],
   },
   {
     id: 16,
@@ -161,6 +176,7 @@ export const products = [
     offPrice: 389000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_327_soi.jpg",
+    suitableFor: ["room", "balcony"],
   },
   {
     id: 17,
@@ -171,6 +187,7 @@ export const products = [
     offPrice: 999000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_328_sydk.jpg",
+    suitableFor: ["room", "office", "bathroom"],
   },
   {
     id: 18,
@@ -181,6 +198,7 @@ export const products = [
     offPrice: 299000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_329_yyk0.jpg",
+    suitableFor: ["room", "office"],
   },
   {
     id: 19,
@@ -191,6 +209,7 @@ export const products = [
     offPrice: 378000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_333_9v1u.jpg",
+    suitableFor: ["room", "office", "balcony"],
   },
   {
     id: 20,
@@ -201,6 +220,7 @@ export const products = [
     offPrice: 548000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_366_amyy.png",
+    suitableFor: ["office", "balcony"],
   },
   {
     id: 21,
@@ -211,6 +231,7 @@ export const products = [
     offPrice: 1249000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_334_suj.jpg",
+    suitableFor: ["room"],
   },
   {
     id: 22,
@@ -221,6 +242,7 @@ export const products = [
     offPrice: 279000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_237_ksdo.png",
+    suitableFor: ["room", "office", "bathroom", "balcony"],
   },
   {
     id: 23,
@@ -231,6 +253,7 @@ export const products = [
     offPrice: 378000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_360_dxz.png",
+    suitableFor: ["room"],
   },
   {
     id: 24,
@@ -241,6 +264,7 @@ export const products = [
     offPrice: 849000,
     discount: 0,
     image: "https://s6.uupload.ir/files/group_368_er4m.png",
+    suitableFor: ["room", "office", "bathroom", "balcony"],
   },
 ];
 

@@ -1,12 +1,12 @@
 import Select from "react-select";
 import "./Select.css";
 
-const SelectComponent = ({ defaultValue, onchange, options }) => {
+const SelectComponent = ({ defaultValue, onchange, options, placeholder }) => {
   return (
     <div dir="rtl">
-      <div className="selectComponent pt-3" dir="rtl">
+      <div className="selectComponent pt-3 mx-2">
         <Select
-          placeholder={<p className="mb-0">مرتب سازی بر اساس ...</p>}
+          placeholder={placeholder}
           defaultValue={defaultValue}
           onChange={onchange}
           options={options}

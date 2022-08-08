@@ -22,7 +22,7 @@ const ProductsPage = () => {
       <Container className="pb-3">
         <Filter />
         <p className="title">گیاهان آپارتمانی</p>
-        <Row className="justify-content-center">
+        <Row className="">
           {products.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>
               <div className="w-100 d-flex justify-content-center">

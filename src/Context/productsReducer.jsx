@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { products } from "../data/data";
 
 const productsReducer = (state, action) => {
   switch (action.type) {
@@ -10,6 +11,17 @@ const productsReducer = (state, action) => {
         return _.orderBy(cloneProducts, ["price"], ["asc"]);
       } else {
         return _.orderBy(cloneProducts, ["price"], ["desc"]);
+      }
+    }
+    case "SUITABLE_FOR": {
+      const value = action.suitableFor.value;
+      if (value === "") {
+        return products;
+      } else {
+        const suitableFor = products.filter(
+          (product) => product.suitableFor.indexOf(value) >= 0
+        );
+        return suitableFor;
       }
     }
 
