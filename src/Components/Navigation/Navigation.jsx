@@ -8,11 +8,13 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { useCart } from "../../Context/CartProvider";
+import { useAuth } from "../../Context/AuthProvider";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [boxShadow, setBoxShadow] = useState(false);
   const { cart } = useCart();
+  const userData = useAuth();
 
   const hamburgerMenuHandler = () => {
     setOpen(!open);
@@ -53,18 +55,25 @@ const Navigation = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" dir="rtl">
           <Nav className="me-auto align-items-md-center d-flex justify-content-between">
-            <section className="d-flex flex-column flex-md-row">
-              <LinkContainer to="/login">
-                <Nav.Link className="authentication-button mt-3 mt-md-0">
-                  <button className="loginButton">ورود</button>
-                </Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/signUp">
-                <Nav.Link className="authentication-button ">
-                  <button className="signUp">ثبت نام</button>
-                </Nav.Link>
-              </LinkContainer>
-            </section>
+            {userData ? (
+              <section className="text-center my-2 my-md-0 userName text-white">
+                {userData.name}
+                <span className="ms-2">عزیز خوش آمدید</span>
+              </section>
+            ) : (
+              <section className="d-flex flex-column flex-md-row">
+                <LinkContainer to="/login">
+                  <Nav.Link className="authentication-button mt-3 mt-md-0">
+                    <button className="loginButton">ورود</button>
+                  </Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/signUp">
+                  <Nav.Link className="authentication-button ">
+                    <button className="signUp">ثبت نام</button>
+                  </Nav.Link>
+                </LinkContainer>
+              </section>
+            )}
             <section className="d-flex flex-column flex-md-row menuItem ms-md-5">
               <LinkContainer to="/">
                 <Nav.Link>خانه</Nav.Link>

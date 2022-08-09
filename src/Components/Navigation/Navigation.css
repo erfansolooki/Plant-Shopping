@@ -97,6 +97,10 @@ button.navbar-toggler {
 
 }
 
+.userName span {
+    color: var(--mainBlack);
+}
+
 @media only screen and (max-width: 768px) {
     .authentication-button .loginButton {
         border: solid 1px #eaeaea !important;

@@ -3,7 +3,7 @@
 }
 
 .formContainer .submitButton {
-    background: #308E63;
+    background: #e7e7e7;
     border-radius: 4px;
     transition: all .3s ease-in-out;
 }
@@ -44,8 +44,20 @@
     max-width: 15rem;
 }
 
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+    cursor: pointer;
+    background: #308E63;
+}
+
+.loginForm .row {
+    height: 30rem;
+}
+
 @media only screen and (min-width: 992px) {
     .formContainer {
-        margin: 0 32px;
+        margin: 0 80px;
     }
 }

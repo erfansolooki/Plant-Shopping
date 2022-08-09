@@ -1,5 +1,5 @@
 input:focus {
-    border: 1px solid #6d28d9;
+    border: 1px solid #308E63;
     outline: none;
 }
 
@@ -15,6 +15,7 @@ input {
     color: #444;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin: 12px 0;
 }
 
 .form-control {
