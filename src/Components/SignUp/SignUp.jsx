@@ -69,7 +69,7 @@ const SignUpForm = () => {
   return (
     <Container>
       <Row dir="rtl" className=" justify-content-center align-items-center">
-        <Col xm={8} md={7} lg={6}>
+        <Col xs={10} md={8} xl={7} xxl={6}>
           <div className="formContainer flex-column justify-content-center align-items-center">
             <div className="text-start">
               <p className="my-3 mx-0 title fw-bold">ثبت نام</p>

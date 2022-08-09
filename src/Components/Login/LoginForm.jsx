@@ -46,7 +46,7 @@ const LoginForm = () => {
   return (
     <Container className="loginForm">
       <Row dir="rtl" className=" justify-content-center align-items-center">
-        <Col xs={10} md={8} xl={6}>
+        <Col xs={10} md={8} xl={7} xxl={6}>
           <div className="formContainer flex-column justify-content-center align-items-center">
             <div className="text-start">
               <p className="my-3 mx-0 title fw-bold">ورود</p>

@@ -5,6 +5,11 @@
 .specialSaleProductList button {
     color: #fff;
     font-size: 14px;
+    background-color: #545454;
+}
+
+.specialSaleProductList button:hover {
+    background: #484141;
 }
 
 .specialSaleProductList .productCart {

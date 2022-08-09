@@ -47,7 +47,7 @@
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled),
-button:not(:disabled) {
+.formContainer button:not(:disabled) {
     cursor: pointer;
     background: #308E63;
 }
