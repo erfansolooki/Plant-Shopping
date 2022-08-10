@@ -10,11 +10,7 @@
   margin-top: 5.97rem;
 }
 
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-.Toastify__close-button>svg :not(:disabled) {
-  cursor: pointer;
+.Toastify__close-button.Toastify__close-button--light {
   background: #fff !important;
   color: #545454 !important;
 }

@@ -1,5 +1,6 @@
 import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
+import { useAuth } from "../Context/AuthProvider";
 
 const Layout = ({ children }) => {
   return (

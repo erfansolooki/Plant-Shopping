@@ -66,6 +66,19 @@
     color: #545454 !important;
 }
 
+.cartSummary button {
+    background: #308E63;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.cartSummary button:hover {
+    background: #308E63;
+    color: #fff;
+    transform: scale(1.03);
+}
+
 @media only screen and (min-width: 768px) {
     .cart .productDetail {
         font-size: 16px;

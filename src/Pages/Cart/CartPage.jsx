@@ -4,11 +4,10 @@ import { RiAddLine, RiCloseLine, RiSubtractLine } from "react-icons/ri";
 import { Col } from "react-bootstrap";
 import "./Cart.css";
 import EmptyCart from "../../Components/EmptyCart/EmptyCart";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const { cart, total } = useCart();
-  console.log(total);
-  console.log(cart);
   const cartDispatch = useCartDispatcher();
 
   const incrementHandler = (product) => {
@@ -29,7 +28,7 @@ const CartPage = () => {
     <Container>
       <p className="title pt-2">سبد خرید</p>
       <Row dir="rtl">
-        <Col xs={12} lg={8}>
+        <Col xs={12} md={8}>
           {cart.map((product) => (
             <section
               className="cart py-2 my-2 d-flex justify-content-between"
@@ -86,7 +85,7 @@ const CartPage = () => {
             </section>
           ))}
         </Col>
-        <Col xs={12} lg={4}>
+        <Col xs={12} md={4}>
           <section className="cartTotal">
             <CartSummary cart={cart} total={total} />
           </section>
@@ -110,7 +109,7 @@ const CartSummary = ({ total, cart }) => {
   return (
     <section className="cartSummary">
       <div className="summaryItem d-flex justify-content-between fw-bold">
-        <p>مجموع :</p>
+        <p>مجموع خرید :</p>
         <p>
           {originalTotalPrice}
           <span className="ms-1">تومان</span>
@@ -130,7 +129,9 @@ const CartSummary = ({ total, cart }) => {
           <span className="ms-1">تومان</span>
         </p>
       </div>
-      <button className="btn primary">ادامه فرآیند خرید</button>
+      <Link to="/checkout">
+        <button className="btn primary w-100 my-2">ادامه فرآیند خرید</button>
+      </Link>
     </section>
   );
 };

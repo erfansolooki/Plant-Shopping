@@ -18,25 +18,25 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   name: Yup.string()
-    .max(8, "Name must be 8 characters or less")
-    .required("Name is required"),
+    .max(8, "نام کاربری باید کمتر از 8 کاراکتر باشد")
+    .required("نام کاربری را وارد کنید"),
   email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
+    .email("ایمیل وارد شده اشتباه است")
+    .required("ایمیل را وارد کنید"),
   phoneNumber: Yup.string()
-    .required("Phone Number Name is required")
-    .matches(/^[0-9]{11}$/, "Invalid Phone Number"),
-  password: Yup.string().required("Password is required"),
+    .required("شماره موبایل را وارد کنید")
+    .matches(/^[0-9]{11}$/, "شماره موبایل اشتباه است"),
+  password: Yup.string().required("رمز عبور را وارد کنید"),
   passwordConfirmation: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Password Confirmation is required"),
+    .oneOf([Yup.ref("password"), null], "رمز عبور همخوانی ندارد")
+    .required("تکرار رمز عبور را وارد کنید"),
 });
 
 const SignUpForm = () => {
   const [error, setError] = useState("");
   const setAuth = useAuthActions();
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     const { name, email, password, phoneNumber } = values;
@@ -50,6 +50,7 @@ const SignUpForm = () => {
     try {
       const { data } = await signUpService(userData);
       setAuth(data);
+      navigate(-1);
       localStorage.setItem("authState", JSON.stringify(data));
       setError(null);
     } catch (error) {

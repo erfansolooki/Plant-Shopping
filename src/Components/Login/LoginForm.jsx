@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import * as Yup from "yup";
 import Input from "../../Common/Input/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginServices } from "../../Services/loginService";
 import { useAuthActions } from "../../Context/AuthProvider";
 import { Container, Row, Col } from "react-bootstrap";
@@ -15,18 +15,20 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  password: Yup.string().required("Password is required"),
+    .email("نوع ایمیل وارد شده اشتباه است")
+    .required("ایمیل وارد کنید"),
+  password: Yup.string().required("رمز عبور وارد کنید"),
 });
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const setAuth = useAuthActions();
   const onSubmit = async (values) => {
     try {
       const { data } = await loginServices(values);
       setAuth(data);
+      navigate(-1);
       localStorage.setItem("authState", JSON.stringify(data));
       setError(null);
     } catch (error) {
@@ -35,7 +37,7 @@ const LoginForm = () => {
       }
     }
   };
-  //   const [formValues, setFormValues] = useState(null);
+
   const formik = useFormik({
     initialValues,
     onSubmit,

@@ -13,6 +13,8 @@ import CartProvider from "./Context/CartProvider";
 import ProductsProvider from "./Context/ProductsProvider";
 import SpecialSaleProductDetail from "./Components/ProductDetail/SpecialSaleProductDetail";
 import AuthProvider from "./Context/AuthProvider";
+import ProtectedRoutes from "./Components/ProtectedRoutes/ProtectedRoutes";
+import CheckoutPage from "./Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
                   path="/specialSaleProductsDetail/:id"
                   element={<SpecialSaleProductDetail />}
                 />
+                <Route element={<ProtectedRoutes />}>
+                  <Route path="/checkout" element={<CheckoutPage />} />
+                </Route>
               </Routes>
             </Layout>
           </CartProvider>
