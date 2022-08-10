@@ -14,6 +14,8 @@ import {
 } from "react-icons/ri";
 import { useProducts } from "../../Context/ProductsProvider";
 import ProductDetailDescription from "./ProductDetailDiscrption";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetail = () => {
   const products = useProducts();
@@ -29,6 +31,15 @@ const ProductDetail = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
+    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   useEffect(() => {
@@ -37,6 +48,7 @@ const ProductDetail = () => {
 
   return (
     <main className="productDetail pb-3">
+      <ToastContainer />
       <Container>
         <Row className="align-items-center" dir="rtl">
           <Col xs={12} lg={9}>

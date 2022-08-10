@@ -7,6 +7,8 @@ import Pagination from "../pagination/Pagination";
 import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { useProducts } from "../../Context/ProductsProvider";
 import { checkInCart } from "../../Utils/checkInCart";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 let PageSize = 12;
 
@@ -24,12 +26,23 @@ const ProductList = () => {
   }, [currentPage]);
 
   const addProductHandler = (product) => {
+    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
     cartDispatch({ type: "ADD_TO_CART", payload: product });
   };
 
   return (
     <>
       <Container>
+        <ToastContainer />
         <p className="title">گیاهان آپارتمانی</p>
         <Row className="justify-content-center">
           {currentTableData.map((product) => (
@@ -38,13 +51,13 @@ const ProductList = () => {
                 <section className="productCart">
                   <section className="text-center">
                     <Link to={`/productsDetail/${product.id}`}>
-                      <div class="popover__wrapper">
-                        <div class="popover__content">
-                          <p class="popover__message mb-0 p-1">
+                      <div className="popover__wrapper">
+                        <div className="popover__content">
+                          <p className="popover__message mb-0 p-1">
                             برای جزییات بیشتر کلیک کنید
                           </p>
                         </div>
-                        <div class="popover__title">
+                        <div className="popover__title">
                           <img
                             src={product.image}
                             alt=""
@@ -76,7 +89,7 @@ const ProductList = () => {
                       className="addToCart position-absolute"
                       onClick={
                         checkInCart(cart, product)
-                          ? ""
+                          ? null
                           : () => addProductHandler(product)
                       }
                     >

@@ -29,13 +29,13 @@ const ProductsPage = () => {
                 <section className="productCart">
                   <section className="text-center">
                     <Link to={`/productsDetail/${product.id}`}>
-                      <div class="popover__wrapper">
-                        <div class="popover__content">
-                          <p class="popover__message mb-0 p-1">
+                      <div className="popover__wrapper">
+                        <div className="popover__content">
+                          <p className="popover__message mb-0 p-1">
                             برای جزییات بیشتر کلیک کنید
                           </p>
                         </div>
-                        <div class="popover__title">
+                        <div className="popover__title">
                           <img
                             src={product.image}
                             alt=""
@@ -67,7 +67,7 @@ const ProductsPage = () => {
                       className="addToCart position-absolute"
                       onClick={
                         checkInCart(cart, product)
-                          ? ""
+                          ? null
                           : () => addProductHandler(product)
                       }
                     >

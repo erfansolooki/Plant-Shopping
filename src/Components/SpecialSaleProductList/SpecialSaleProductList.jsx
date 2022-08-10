@@ -7,6 +7,8 @@ import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
 import { useState } from "react";
 import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { checkInCart } from "../../Utils/checkInCart";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SpecialSaleProductList = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
@@ -15,10 +17,20 @@ const SpecialSaleProductList = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
+    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
     <main className="specialSaleProductList">
+      <ToastContainer />
       <Container>
         <p className="title pt-4">فروش ویژه</p>
         <Row className="justify-content-center">
@@ -34,13 +46,13 @@ const SpecialSaleProductList = () => {
                   </section>
                   <section className="text-center">
                     <Link to={`/specialSaleProductsDetail/${product.id}`}>
-                      <div class="popover__wrapper">
-                        <div class="popover__content">
-                          <p class="popover__message mb-0 p-1">
+                      <div className="popover__wrapper">
+                        <div className="popover__content">
+                          <p className="popover__message mb-0 p-1">
                             برای جزییات بیشتر کلیک کنید
                           </p>
                         </div>
-                        <div class="popover__title">
+                        <div className="popover__title">
                           <img
                             src={product.image}
                             alt=""
@@ -77,7 +89,7 @@ const SpecialSaleProductList = () => {
                       className="addToCart position-absolute"
                       onClick={
                         checkInCart(cart, product)
-                          ? ""
+                          ? null
                           : () => addProductHandler(product)
                       }
                     >

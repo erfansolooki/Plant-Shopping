@@ -9,3 +9,12 @@
 .children {
   margin-top: 5.97rem;
 }
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+.Toastify__close-button>svg :not(:disabled) {
+  cursor: pointer;
+  background: #fff !important;
+  color: #545454 !important;
+}
