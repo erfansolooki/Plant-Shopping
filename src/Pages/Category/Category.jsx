@@ -6,6 +6,8 @@ import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { checkInCart } from "../../Utils/checkInCart";
 import { Link } from "react-router-dom";
 import Filter from "../../Components/Filter/Filter";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductsPage = () => {
   const [activeLikeButton, setActiveLikeButton] = useState([]);
@@ -15,11 +17,21 @@ const ProductsPage = () => {
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
+    toast.success(`${product.name} به سبد خرید شما اضافه شد`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
     <>
       <Container className="pb-3">
+        <ToastContainer />
         <Filter />
         <p className="title">گیاهان آپارتمانی</p>
         <Row className="">

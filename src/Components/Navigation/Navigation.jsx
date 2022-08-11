@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../data/Pictures/Group 336.png";
 import { RiShoppingCartLine, RiCloseLine, RiMenu3Fill } from "react-icons/ri";
 import "./Navigation.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { useCart } from "../../Context/CartProvider";
@@ -13,8 +13,8 @@ import { useAuth } from "../../Context/AuthProvider";
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const [boxShadow, setBoxShadow] = useState(false);
-  const { cart } = useCart();
   const userData = useAuth();
+  const { cart } = useCart();
 
   const hamburgerMenuHandler = () => {
     setOpen(!open);
