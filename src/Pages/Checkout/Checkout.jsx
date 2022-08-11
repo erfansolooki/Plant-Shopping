@@ -8,6 +8,7 @@ import "./Checkout.css";
 
 const CheckoutPage = () => {
   const [activeButton, setActiveButton] = useState("");
+  const [post, setPost] = useState("");
   const { cart, total } = useCart();
   const originalTotalPrice = cart.length
     ? cart.reduce(
@@ -21,8 +22,11 @@ const CheckoutPage = () => {
     setActiveButton(event.target.id);
   };
 
+  const activePostButton = (event) => {
+    setPost(event.target.id);
+  };
+
   const toastify = () => {
-    cart.splice(0, Infinity);
     toast.success("سفارش شما با موفقیت ثبت شد", {
       position: "top-right",
       autoClose: 5000,
@@ -62,16 +66,44 @@ const CheckoutPage = () => {
             </div>
           </section>
           <section className="ms-2">
-            <section className="address ">
-              <p className="addressTitle fw-bold mb-1">آدرس </p>
+            <section className="payments mt-2 pb-2">
+              <p className="addressTitle fw-bold mb-1">نوع ارسال </p>
+              <section className="paymentButton">
+                <button
+                  key={1}
+                  className={post === "1" ? "active" : undefined}
+                  id={"1"}
+                  onClick={activePostButton}
+                >
+                  پست پیشتاز
+                </button>
+                <button
+                  key={2}
+                  className={post === "2" ? "active" : undefined}
+                  id={"2"}
+                  onClick={activePostButton}
+                >
+                  تیپاکس
+                </button>
+
+                <button
+                  key={3}
+                  className={post === "3" ? "active" : undefined}
+                  id={"3"}
+                  onClick={activePostButton}
+                >
+                  پست فروشگاه
+                </button>
+                <button
+                  key={4}
+                  className={post === "4" ? "active" : undefined}
+                  id={"4"}
+                  onClick={activePostButton}
+                >
+                  پست عادی
+                </button>
+              </section>
             </section>
-            <textarea
-              name=""
-              id="textarea"
-              className="pt-2"
-              cols="32"
-              rows="5"
-            ></textarea>
             <section className="payments mt-2 pb-2">
               <p className="addressTitle fw-bold mb-1">نوع پرداخت </p>
               <section className="paymentButton">
@@ -106,11 +138,11 @@ const CheckoutPage = () => {
 
           <button
             className={
-              activeButton
+              activeButton && post
                 ? "finalAcceptButton m-2 py-2"
                 : "disableAcceptButton m-2 py-2"
             }
-            onClick={activeButton ? toastify : null}
+            onClick={activeButton && post ? toastify : null}
           >
             ثبت سفارش
           </button>
