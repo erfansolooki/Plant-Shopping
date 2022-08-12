@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/search"
+  to = "https://app.netlify.com/sites/lambent-duckanoo-ba7412/deploys/62f5f9ca7f57080008fbba08"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
