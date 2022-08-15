@@ -9,15 +9,21 @@ import { useProducts } from "../../Context/ProductsProvider";
 import { checkInCart } from "../../Utils/checkInCart";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  useFavorite,
+  useFavoriteDispatcher,
+} from "../../Context/FavoriteProducts";
+import { checkInFavoriteProducts } from "../../Utils/checkInFavoriteProducts";
 
 let PageSize = 12;
 
 const ProductList = () => {
-  const [activeLikeButton, setActiveLikeButton] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const products = useProducts();
   const { cart } = useCart();
   const cartDispatch = useCartDispatcher();
+  const favoriteDispatcher = useFavoriteDispatcher();
+  const { favoriteProducts } = useFavorite();
 
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
@@ -37,6 +43,13 @@ const ProductList = () => {
     });
 
     cartDispatch({ type: "ADD_TO_CART", payload: product });
+  };
+
+  const addFavoriteProductsHandler = (favoriteProducts) => {
+    favoriteDispatcher({
+      type: "ADD_TO_FAVORITE_PRODUCTS",
+      payload: favoriteProducts,
+    });
   };
 
   return (
@@ -70,11 +83,11 @@ const ProductList = () => {
                   <section dir="rtl" className="cartFooter position-absolute">
                     <section className="ps-2 productDescription">
                       <RiHeart2Fill
-                        onClick={() => setActiveLikeButton(product.id)}
+                        onClick={() => addFavoriteProductsHandler(product)}
                         className={
-                          product.id === activeLikeButton
-                            ? "redHeart likedButton"
-                            : "likedButton"
+                          checkInFavoriteProducts(favoriteProducts, product)
+                            ? "favoriteProduct"
+                            : null
                         }
                       />
                       <p className="mt-2">{product.name}</p>

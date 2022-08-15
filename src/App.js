@@ -15,31 +15,37 @@ import SpecialSaleProductDetail from "./Components/ProductDetail/SpecialSaleProd
 import AuthProvider from "./Context/AuthProvider";
 import ProtectedRoutes from "./Components/ProtectedRoutes/ProtectedRoutes";
 import CheckoutPage from "./Pages/Checkout/Checkout";
+import FavoriteProducts from "./Context/FavoriteProducts";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <ProductsProvider>
-          <CartProvider>
-            <Layout>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/category" element={<Category />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signUp" element={<SignUpPage />} />
-                <Route path="/productsDetail/:id" element={<ProductDetail />} />
-                <Route
-                  path="/specialSaleProductsDetail/:id"
-                  element={<SpecialSaleProductDetail />}
-                />
-                <Route element={<ProtectedRoutes />}>
-                  <Route path="/checkout" element={<CheckoutPage />} />
-                </Route>
-              </Routes>
-            </Layout>
-          </CartProvider>
+          <FavoriteProducts>
+            <CartProvider>
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/category" element={<Category />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/signUp" element={<SignUpPage />} />
+                  <Route
+                    path="/productsDetail/:id"
+                    element={<ProductDetail />}
+                  />
+                  <Route
+                    path="/specialSaleProductsDetail/:id"
+                    element={<SpecialSaleProductDetail />}
+                  />
+                  <Route element={<ProtectedRoutes />}>
+                    <Route path="/checkout" element={<CheckoutPage />} />
+                  </Route>
+                </Routes>
+              </Layout>
+            </CartProvider>
+          </FavoriteProducts>
         </ProductsProvider>
       </AuthProvider>
     </BrowserRouter>

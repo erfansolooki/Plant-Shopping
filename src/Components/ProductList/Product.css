@@ -63,12 +63,12 @@
     justify-content: center;
 }
 
-.likedButton {
-    cursor: pointer;
+.favoriteProduct {
+    color: #e93535db;
 }
 
-.redHeart {
-    color: red;
+.productCart .productDescription svg {
+    cursor: pointer;
 }
 
 .title {

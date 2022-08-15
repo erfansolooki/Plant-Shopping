@@ -8,12 +8,18 @@ import { Link } from "react-router-dom";
 import Filter from "../../Components/Filter/Filter";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  useFavorite,
+  useFavoriteDispatcher,
+} from "../../Context/FavoriteProducts";
+import { checkInFavoriteProducts } from "../../Utils/checkInFavoriteProducts";
 
 const ProductsPage = () => {
-  const [activeLikeButton, setActiveLikeButton] = useState([]);
   const products = useProducts();
   const { cart } = useCart();
   const cartDispatch = useCartDispatcher();
+  const favoriteDispatcher = useFavoriteDispatcher();
+  const { favoriteProducts } = useFavorite();
 
   const addProductHandler = (product) => {
     cartDispatch({ type: "ADD_TO_CART", payload: product });
@@ -25,6 +31,13 @@ const ProductsPage = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
+    });
+  };
+
+  const addFavoriteProductsHandler = (favoriteProducts) => {
+    favoriteDispatcher({
+      type: "ADD_TO_FAVORITE_PRODUCTS",
+      payload: favoriteProducts,
     });
   };
 
@@ -60,11 +73,11 @@ const ProductsPage = () => {
                   <section dir="rtl" className="cartFooter position-absolute">
                     <section className="ps-2 productDescription">
                       <RiHeart2Fill
-                        onClick={() => setActiveLikeButton(product.id)}
+                        onClick={() => addFavoriteProductsHandler(product)}
                         className={
-                          product.id === activeLikeButton
-                            ? "redHeart likedButton"
-                            : "likedButton"
+                          checkInFavoriteProducts(favoriteProducts, product)
+                            ? "favoriteProduct"
+                            : null
                         }
                       />
                       <p className="mt-2">{product.name}</p>
