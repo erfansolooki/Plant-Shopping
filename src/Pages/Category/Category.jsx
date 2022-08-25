@@ -1,7 +1,7 @@
 import { useProducts } from "../../Context/ProductsProvider";
 import { RiHeart2Fill, RiAddLine, RiArrowLeftLine } from "react-icons/ri";
 import { Row, Col, Container } from "react-bootstrap";
-import { useState } from "react";
+
 import { useCart, useCartDispatcher } from "../../Context/CartProvider";
 import { checkInCart } from "../../Utils/checkInCart";
 import { Link } from "react-router-dom";
@@ -46,7 +46,7 @@ const ProductsPage = () => {
       <Container className="pb-3">
         <ToastContainer />
         <Filter />
-        <p className="title">گیاهان آپارتمانی</p>
+        <p className="title ms-0">گیاهان آپارتمانی</p>
         <Row className="">
           {products.map((product) => (
             <Col xs={12} md={6} lg={4} xxl={3} className="g-4" key={product.id}>

@@ -10,6 +10,7 @@ export const products = [
     image: "https://s6.uupload.ir/files/group_323_1m2.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_337_1wpy.png",
     suitableFor: ["room", "office"],
+    sales: 10,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const products = [
     image: "https://s6.uupload.ir/files/group_322_n0oa.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_341_arod.jpg",
     suitableFor: ["room", "office", "balcony"],
+    sales: 6,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const products = [
     image: "https://s6.uupload.ir/files/group_126_n95u.jpg",
     sliderImage: "https://s6.uupload.ir/files/group_350_nb9x.png",
     suitableFor: ["room", "office"],
+    sales: 8,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_118_5bw.jpg",
     suitableFor: ["room", "office", "bathroom", "balcony"],
+    sales: 12,
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_117_2uzo.jpg",
     suitableFor: ["bathroom", "balcony"],
+    sales: 14,
   },
   {
     id: 6,
@@ -67,6 +72,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_116_agwn.jpg",
     suitableFor: ["bathroom"],
+    sales: 2,
   },
   {
     id: 7,
@@ -78,6 +84,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_340_yln8.png",
     suitableFor: ["room", "office", "bathroom"],
+    sales: 5,
   },
   {
     id: 8,
@@ -89,6 +96,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_320_xp23.jpg",
     suitableFor: ["bathroom"],
+    sales: 4,
   },
   {
     id: 9,
@@ -100,6 +108,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_370_r5ni.png",
     suitableFor: ["room", "office"],
+    sales: 24,
   },
   {
     id: 10,
@@ -111,6 +120,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_321_9rrw.jpg",
     suitableFor: ["balcony"],
+    sales: 11,
   },
   {
     id: 11,
@@ -122,6 +132,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_120_3n9z.jpg",
     suitableFor: ["office", "bathroom"],
+    sales: 8,
   },
   {
     id: 12,
@@ -133,6 +144,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_121_aa3.jpg",
     suitableFor: ["room", "office", "bathroom", "balcony"],
+    sales: 13,
   },
   {
     id: 13,
@@ -144,6 +156,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_324_gyoa.jpg",
     suitableFor: ["room", "office"],
+    sales: 10,
   },
   {
     id: 14,
@@ -155,6 +168,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_119_i86a.jpg",
     suitableFor: ["room", "office"],
+    sales: 21,
   },
   {
     id: 15,
@@ -166,6 +180,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_372_nksv.png",
     suitableFor: ["balcony"],
+    sales: 4,
   },
   {
     id: 16,
@@ -177,6 +192,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_327_soi.jpg",
     suitableFor: ["room", "balcony"],
+    sales: 16,
   },
   {
     id: 17,
@@ -188,6 +204,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_328_sydk.jpg",
     suitableFor: ["room", "office", "bathroom"],
+    sales: 9,
   },
   {
     id: 18,
@@ -199,6 +216,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_329_yyk0.jpg",
     suitableFor: ["room", "office"],
+    sales: 28,
   },
   {
     id: 19,
@@ -210,6 +228,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_333_9v1u.jpg",
     suitableFor: ["room", "office", "balcony"],
+    sales: 15,
   },
   {
     id: 20,
@@ -221,6 +240,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_366_amyy.png",
     suitableFor: ["office", "balcony"],
+    sales: 13,
   },
   {
     id: 21,
@@ -232,6 +252,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_334_suj.jpg",
     suitableFor: ["room"],
+    sales: 11,
   },
   {
     id: 22,
@@ -243,6 +264,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_237_ksdo.png",
     suitableFor: ["room", "office", "bathroom", "balcony"],
+    sales: 14,
   },
   {
     id: 23,
@@ -254,6 +276,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_360_dxz.png",
     suitableFor: ["room"],
+    sales: 19,
   },
   {
     id: 24,
@@ -265,6 +288,7 @@ export const products = [
     discount: 0,
     image: "https://s6.uupload.ir/files/group_368_er4m.png",
     suitableFor: ["room", "office", "bathroom", "balcony"],
+    sales: 10,
   },
 ];
 

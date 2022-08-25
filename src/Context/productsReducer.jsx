@@ -3,16 +3,6 @@ import { products } from "../data/data";
 
 const productsReducer = (state, action) => {
   switch (action.type) {
-    case "SORT": {
-      const value = action.sortOptions.value;
-      const cloneProducts = [...state];
-      if (value === "lowest_price") {
-        // use loadash library
-        return _.orderBy(cloneProducts, ["price"], ["asc"]);
-      } else {
-        return _.orderBy(cloneProducts, ["price"], ["desc"]);
-      }
-    }
     case "SUITABLE_FOR": {
       const value = action.suitableFor.value;
       if (value === "") {
@@ -22,6 +12,19 @@ const productsReducer = (state, action) => {
           (product) => product.suitableFor.indexOf(value) >= 0
         );
         return suitableFor;
+      }
+    }
+    case "SORT_BY": {
+      const selectedId = action.payload;
+      const cloneProducts = [...state];
+      if (selectedId === "1") {
+        return _.orderBy(cloneProducts, ["price"], ["desc"]);
+      } else if (selectedId === "2") {
+        return _.orderBy(cloneProducts, ["price"], ["asc"]);
+      } else if (selectedId === "3") {
+        return _.orderBy(cloneProducts, ["sales"], ["desc"]);
+      } else {
+        return _.orderBy(cloneProducts, ["id"], ["asc"]);
       }
     }
 
