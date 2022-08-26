@@ -11,24 +11,94 @@
     color: #545454;
 }
 
-.sortButtons .sortActiveButton {
-    border: 1px solid #545454;
+.sortButtons p {
     color: #545454;
+    font-size: 12px;
+    width: 10rem;
+}
+
+@media only screen and (min-width: 325px) {
+    .sortButtons p {
+        color: #545454;
+        font-size: 12px;
+        width: 10rem;
+    }
+}
+
+@media only screen and (min-width: 340px) {
+    .sortButtons p {
+        width: 8.7rem;
+    }
+}
+
+
+@media only screen and (min-width: 380px) {
+    .sortButtons p {
+        width: 7.2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .sortButtons p {
+        font-size: 14px;
+        width: 8.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 430px) {
+    .sortButtons .buttons {
+        width: 18rem !important;
+    }
+}
+
+@media only screen and (min-width: 502px) {
+    .sortButtons .buttons {
+        width: 23rem !important;
+        height: 40px !important;
+        overflow-x: unset !important;
+    }
+
+    .sortButtons p {
+        margin-bottom: 0 !important;
+    }
+}
+
+.buttons::-webkit-scrollbar {
+    width: 12px;
+}
+
+.buttons::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.buttons::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+
+.sortButtons .sortActiveButton {
+    border: 1px solid #308E63;
+    color: #545454;
+    color: #fff;
+    background-color: #308E63;
 }
 
 .sortButtons button {
-    margin: 0 4px;
+    margin: 0 2px;
     padding: 4px 8px;
-    border: 1px solid #DCDCDC;
-    color: #DCDCDC;
+    border: 1px solid #767676;
+    color: #767676;
     background: #fff;
     border-radius: 8px;
+    font-size: 12px;
 }
 
-@media only screen and (min-width: 320px) {
-    .sortButtons button:nth-child(1) {
-        margin-bottom: 8px;
-    }
+.sortButtons .buttons {
+    width: 15rem;
+    overflow-x: scroll;
+    display: flex;
 }
 
 @media only screen and (min-width: 425px) {
